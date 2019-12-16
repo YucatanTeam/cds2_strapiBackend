@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <script>
+
     // fetch header
         fetch('http://cdsapply.ir/headers')
             .then(response => response.json())
@@ -12,17 +13,30 @@
                 document.getElementById("main_second_line").appendChild(document.createTextNode(headers[0].second_line))
                 document.getElementById("main_third_line").appendChild(document.createTextNode(headers[0].third_line))
             })
+
+
+    // fetch certificates
+        fetch('http://cdsapply.ir/candocertificates')
+            .then(response => response.json())
+            .then(candocertificates => {
+
+                var div = document.createElement("div")
+                div.appendChild(document.createTextNode(candocertificates[0].content))
+                div.setAttribute("style", "font-size:18px")
+                div.setAttribute("data-aos", "fade-left")
+                document.getElementById("candocertificates").appendChild(div)
+            })
 </script>
 <head>
 
-    <title>کندو</title>
+    <title>Cando Certificate | CDS</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="موسسه اعزام دانشجو کندو">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="http://cdsapply.ir/uploads/2e570ff8643d422cae8db5b6dd3bee9c.png" />
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <link rel="shortcut icon" href="http://cdsapply.ir/uploads/2e570ff8643d422cae8db5b6dd3bee9c.png" />
     <link rel="stylesheet" type="text/css" href="styles/bootstrap-4.1.2/bootstrap.min.css">
     <link href="plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.carousel.css">
@@ -36,8 +50,6 @@
     <link rel="stylesheet" type="text/css" href="styles/blog_responsive.css">
 </head>
 <style>
-
-
     @font-face {
         font-family: myFirstFont;
         src:url("font/Sahel.ttf");
@@ -74,13 +86,22 @@
         }
     }
     .boxt {
-        margin-top: 50px;
-        margin-bottom: 50px;
+
+        padding: 20px;
     }
     @media screen and (max-width: 600px) {
         .boxt {
-            margin-top: 100px;
-            margin-bottom: 100px;
+            padding: 3px;
+        }
+    }
+    .box2 {
+
+        margin: 5%;
+    }
+    @media screen and (max-width: 600px) {
+        .box2 {
+            margin-left: 20px;
+            margin-top: 80px;
         }
     }
     .search-input{
@@ -111,7 +132,7 @@
         background-color: transparent;
     }
 </style>
-<body style="background-image: url(images/loginbg.png);background-size:20%;background-repeat: repeat;font-family: myFirstFont;">
+<body style="background-image: url(images/loginbg.png);background-size:20%;background-repeat: repeat;font-family : myFirstFont;">
 <div class="super_container">
 
 
@@ -126,10 +147,10 @@
                                 <div>we build careers</div>
                             </a>
                         </div>
-                        <nav class="main_nav" style="margin-left: 23%">
+                        <nav class="main_nav" style="margin-left: 25%">
                             <ul  class="d-flex flex-row align-items-center justify-content-start ">
-                                <li><a class="text-white mr-0 ml-0" style="font-size: 12px;">صفحه محتوا</a></li>
-                                <li><a href="index.html" style="font-size: 12px;">  < صفحه اصلی</a></li>
+                                <li><a class="text-white mr-0 ml-0" style="font-size: 12px;">گواه نوشت</a></li>
+                                <li><a href="index.html" style="font-size: 12px;" >  < صفحه اصلی</a></li>
                                 <li><a href="index_english.html" class="btn btn-outline-light" href="index.html">EN</a></li>
                                 <li class=" rounded">
                                     <button type="submit" aria-label="Search..." class="search-btn"><i class="fa fa-search"></i></button>
@@ -177,7 +198,7 @@
         </div>
         <div class="menu_reservations_phone ml-auto"><div class="logo">
             <a href="#">
-                <div>CDS</div>
+                <div>C    D    S</div>
                 <div class="mt-auto">we build careers</div>
             </a>
         </div></div>
@@ -198,8 +219,6 @@
                             <div class="home_text ml-auto mr-auto">
                                 <p class="hov" id="main_third_line"><!-- fetch here --></p>
                             </div>
-
-
                         </div>
                     </div>
                 </div>
@@ -208,11 +227,16 @@
         <div class="scroll_icon hid"></div>
     </div>
 
-
-    <div>
+    <div >
         <div class="container">
-            <div class=" border border-dark bg-white boxt " >
-                <div class="text-center" style="height: 500px;font-size: 56px;padding-top: 200px">MY CONTENT</div>
+            <div class=" border border-dark bg-white box2" >
+                <div  class=" text-center rounded boxt" id="candocertificates">
+                    
+
+                        <!-- fetch here -->
+
+
+                </div>
             </div>
         </div>
     </div>
@@ -221,15 +245,11 @@
     <footer class="footer" >
         <div class="container" >
             <div class="row text-center" >
-
                 <div class="col-lg-6 ">
                     <div class="footer_logo">
-
-
                         <div class="footer_logo_title">CDS</div>
                         <div class="footer_logo_subtitle">we build careers</div>
                     </div>
-
                 </div>
                 <div class="home_text col-lg-6" style="margin-top: 20px;font-size: 11px">
                     Designed by:
