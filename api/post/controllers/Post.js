@@ -5,4 +5,14 @@
  * to customize this controller
  */
 
-module.exports = {};
+module.exports = {
+    render(ctx) {
+        let slug = ctx.params.slug
+        console.log("get /post/fa/:slug >", slug)
+    },
+
+    en_render(ctx) {
+        let slug = ctx.params.slug
+        console.log("get /post/fa/:slug >", slug)
+    }
+};
