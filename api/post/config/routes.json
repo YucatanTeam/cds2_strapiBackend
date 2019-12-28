@@ -10,16 +10,8 @@
     },
     {
       "method": "GET",
-      "path": "/posts/fa/:slug",
-      "handler": "Post.render",
-      "config": {
-        "policies": []
-      }
-    },
-    {
-      "method": "GET",
-      "path": "/posts/en/:slug/",
-      "handler": "Post.en_render",
+      "path": "/posts/:lang/:slug",
+      "handler": "Post.findOneBySlug",
       "config": {
         "policies": []
       }
