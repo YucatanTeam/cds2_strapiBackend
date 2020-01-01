@@ -1,5 +1,5 @@
 {
-  "host": "localhost",
+  "host": "cdsapply.ir",
   "port": 1337,
   "proxy": {
     "enabled": false
