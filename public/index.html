@@ -204,7 +204,7 @@
                 var countries_first_card = document.getElementById("countries_first_card")
                 var countries_second_card = document.getElementById("countries_second_card")
                 var countries_third_card = document.getElementById("countries_third_card")
-                var main_counties = {}
+                var main_countries = {}
 
                 for(i = 0; i < countries.length; i++){
                     
@@ -223,7 +223,7 @@
                         clink.appendChild(secdiv)
                         fdiv.appendChild(clink)
 
-                    if(countries[i].main && Object.keys(main_counties).length <=3 ) main_counties[countries[i].id] = countries[i]
+                    if(countries[i].main && Object.keys(main_countries).length <=3 ) main_countries[countries[i].id] = countries[i]
                     if(countries[i].first_card_other_country) countries_first_card.appendChild(fdiv)
                     if(countries[i].second_card_other_country) countries_second_card.appendChild(fdiv)
                     if(countries[i].third_card_other_country) countries_third_card.appendChild(fdiv)
@@ -247,23 +247,27 @@
 
 
                 // TODO : fix slug issue
-                document.getElementById("main_country_n1_back_img").setAttribute("src", "http://cdsapply.ir"+main_counties[1].logo.url)
-                document.getElementById("main_country_n1_en_name").appendChild(document.createTextNode(main_counties[1].en_name))
-                document.getElementById("main_country_n1_name").appendChild(document.createTextNode(main_counties[1].name))
-                document.getElementById("main_country_n1_slug").href = "http://cdsapply.ir/"+main_counties[1].slug
-                document.getElementById("main_country_n1_en_slug").href = "http://cdsapply.ir/"+main_counties[1].en_slug
+                // for (const property in main_countries) {
+                //       console.log(`${property}: ${main_countries[property].en_name}`);
+                //     }
 
-                document.getElementById("main_country_n2_back_img").setAttribute("src", "http://cdsapply.ir"+main_counties[2].logo.url)
-                document.getElementById("main_country_n2_en_name").appendChild(document.createTextNode(main_counties[2].en_name))
-                document.getElementById("main_country_n2_name").appendChild(document.createTextNode(main_counties[2].name))
-                document.getElementById("main_country_n2_slug").href = "http://cdsapply.ir/"+main_counties[2].slug
-                document.getElementById("main_country_n2_en_slug").href = "http://cdsapply.ir/"+main_counties[2].en_slug
+                document.getElementById("main_country_n1_back_img").setAttribute("src", "http://cdsapply.ir"+main_countries[1].logo.url)
+                document.getElementById("main_country_n1_en_name").appendChild(document.createTextNode(main_countries[1].en_name))
+                document.getElementById("main_country_n1_name").appendChild(document.createTextNode(main_countries[1].name))
+                document.getElementById("main_country_n1_slug").href = "http://cdsapply.ir/"+main_countries[1].slug
+                document.getElementById("main_country_n1_en_slug").href = "http://cdsapply.ir/"+main_countries[1].en_slug
 
-                document.getElementById("main_country_n3_back_img").setAttribute("src", "http://cdsapply.ir"+main_counties[3].logo.url)
-                document.getElementById("main_country_n3_en_name").appendChild(document.createTextNode(main_counties[3].en_name))
-                document.getElementById("main_country_n3_name").appendChild(document.createTextNode(main_counties[3].name))
-                document.getElementById("main_country_n3_slug").href = "http://cdsapply.ir/"+main_counties[3].slug
-                document.getElementById("main_country_n3_en_slug").href = "http://cdsapply.ir/"+main_counties[3].en_slug
+                document.getElementById("main_country_n2_back_img").setAttribute("src", "http://cdsapply.ir"+main_countries[2].logo.url)
+                document.getElementById("main_country_n2_en_name").appendChild(document.createTextNode(main_countries[2].en_name))
+                document.getElementById("main_country_n2_name").appendChild(document.createTextNode(main_countries[2].name))
+                document.getElementById("main_country_n2_slug").href = "http://cdsapply.ir/"+main_countries[2].slug
+                document.getElementById("main_country_n2_en_slug").href = "http://cdsapply.ir/"+main_countries[2].en_slug
+
+                document.getElementById("main_country_n3_back_img").setAttribute("src", "http://cdsapply.ir"+main_countries[16].logo.url)
+                document.getElementById("main_country_n3_en_name").appendChild(document.createTextNode(main_countries[16].en_name))
+                document.getElementById("main_country_n3_name").appendChild(document.createTextNode(main_countries[16].name))
+                document.getElementById("main_country_n3_slug").href = "http://cdsapply.ir/"+main_countries[16].slug
+                document.getElementById("main_country_n3_en_slug").href = "http://cdsapply.ir/"+main_countries[16].en_slug
 
             })
 
@@ -917,7 +921,7 @@
 
                        <a id="main_country_n3_en_slug">
                             <div class="themenu_col_title col-lg-7 mt-3 " data-aos="zoom-in-down" 
-                            style="padding-left: 10px !important;font-size: 25px" id="main_country_n3_en_name">
+                            style="padding-left: 10px !important;font-size: 22px" id="main_country_n3_en_name">
                                 <!-- fetch here -->
                             </div>
                         </a>
