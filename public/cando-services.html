@@ -6,23 +6,18 @@
         fetch('http://cdsapply.ir/headers')
             .then(response => response.json())
             .then(headers => {
-
                 document.getElementById("main_logo").setAttribute("src", "http://cdsapply.ir"+headers[0].logo.url)
                 document.getElementById("main_backimg").setAttribute("data-image-src", "http://cdsapply.ir"+headers[0].background_img.url)
                 document.getElementById("main_first_line").appendChild(document.createTextNode(headers[0].first_line))
                 document.getElementById("main_second_line").appendChild(document.createTextNode(headers[0].second_line))
                 document.getElementById("main_third_line").appendChild(document.createTextNode(headers[0].third_line))
             })
-
-
     // fetch certificates
         fetch('http://cdsapply.ir/othercandoservices')
             .then(response => response.json())
             .then(othercandoservices => {
-
                 var ul = document.getElementById("othercandoservices")
                 for(i = 0; i < othercandoservices.length; i++){
-
                     var list = document.createElement("li")
                     list.setAttribute("class", "mt-2")
                     list.setAttribute("data-aos", "fade-right")
@@ -33,7 +28,6 @@
                     ocslink.appendChild(document.createTextNode(othercandoservices[i].title))
                     list.appendChild(ocslink)
                     ul.appendChild(list)
-
                 }
                 
             })
@@ -65,13 +59,10 @@
     <link rel="stylesheet" type="text/css" href="styles/blog_responsive.css">
 </head>
 <style>
-
-
     @font-face {
         font-family: myFirstFont;
         src:url("font/Sahel.ttf");
     }
-
     p{
         font-family: myFirstFont;
         font-size: 16px;
@@ -79,7 +70,6 @@
     .saheltitle
     {
         font-family: myFirstFont;
-
     }
     .hover09 figure img {
         -webkit-filter: sepia(100%);
@@ -94,7 +84,6 @@
     .hov:hover{
         color: #FFCD05;
     }
-
 </style>
 <body>
 <div class="super_container">
@@ -107,7 +96,7 @@
                     <div class="header_content d-flex flex-row align-items-center justify-content-start textrtl ">
                         <div class="logo">
                             <a href="#">
-                                <div>        C    D    S</div>
+                                <div>        C    D    S</div>
                                 <div>we build careers</div>
                             </a>
                         </div>
@@ -258,10 +247,7 @@
         $(window).scroll(function() {
             var windowBottom = $(this).scrollTop() + $(this).innerHeight();
             $(".anima").each(function() {
-
                 var objectBottom = $(this).offset().top + $(this).outerHeight();
-
-
                 if (objectBottom < windowBottom) { //object comes into view (scrolling down)
                     if ($(this).css("opacity")==0) {$(this).fadeTo(500,1);}
                 } else { //object goes out of view (scrolling up)
