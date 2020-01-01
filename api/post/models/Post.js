@@ -11,16 +11,16 @@ module.exports = {
   
   // After saving a value.
   // Fired after an `insert` or `update` query.
-  afterSave: async (model, response, options) => {
-    // title|en_title -> slug|en_slug
-    let slug = model.attributes.title.split(' ').join('-')
-    let en_slug = model.attributes.en_title.split(' ').join('-')
-    if(slug != model.attributes.slug && en_slug != model.attributes.en_slug) {
-      model.attributes.slug = slug
-      model.attributes.en_slug = en_slug
-      strapi.query('post').update({ id: model.attributes.id }, model.attributes)
-    }
-  },
+//   afterSave: async (model, response, options) => {
+//     // title|en_title -> slug|en_slug
+//     let slug = model.attributes.title.split(' ').join('-')
+//     let en_slug = model.attributes.en_title.split(' ').join('-')
+//     if(slug != model.attributes.slug && en_slug != model.attributes.en_slug) {
+//       model.attributes.slug = slug
+//       model.attributes.en_slug = en_slug
+//       strapi.query('post').update({ id: model.attributes.id }, model.attributes)
+//     }
+//   },
 
   // Before fetching a value.
   // Fired before a `fetch` operation.
