@@ -2,6 +2,8 @@
 <html lang="en">
 <script>
 
+
+    window.addEventListener('DOMContentLoaded', (event) => {
         // fetch posts
        fetch('http://cdsapply.ir/posts')
               .then(response => response.json())
@@ -356,11 +358,16 @@
 
                 })
 
+    })
+
 </script>
 <head>
 
     <title>Study Abroad Agency | CDS</title>
     <meta charset="utf-8">
+    <meta http-equiv="Content-Security-Policy" content="default-src *;
+   img-src * 'self' data: https:; script-src 'self' 'unsafe-inline' 'unsafe-eval' *;
+   style-src  'self' 'unsafe-inline' *">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="Kendu Student Dispatch Institute">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -613,7 +620,7 @@
                             <ul  class="d-flex flex-row align-items-center justify-content-start ">
 
                                 <li><a href="#contactus" style="font-size: 12px;" >Contact US</a></li>
-                                <li><a href="cando-certificate.html"> CANDO CERTIFICATE</a></li>
+                                <li><a href="cando-testimonial.html" style="font-size: 12px;"> CANDO CERTIFICATE</a></li>
                                 <li><a href="#wbn" style="font-size: 12px;">CONSULTATION REQUEST</a></li>
                                 <li><a href="hhtp://cdsapply.ir/admin" style="font-size: 12px;">LOG IN</a></li>
                                 <li><a class="btn btn-outline-light" href="index.html" style="font-size: 12px;">FA</a></li>

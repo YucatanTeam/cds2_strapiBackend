@@ -2,6 +2,8 @@
 <html lang="fa">
 <script>
 
+    window.addEventListener('DOMContentLoaded', (event) => {
+            
         // fetch posts
        fetch('http://cdsapply.ir/posts')
               .then(response => response.json())
@@ -355,12 +357,17 @@
 
 
                 })
+        });
+
 
 </script>
 <head>
 
     <title>موسسه اعزام دانشجو | CDS</title>
     <meta charset="utf-8">
+    <meta http-equiv="Content-Security-Policy" content="default-src *;
+   img-src * 'self' data: https:; script-src 'self' 'unsafe-inline' 'unsafe-eval' *;
+   style-src  'self' 'unsafe-inline' *">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="موسسه اعزام دانشجو کندو">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -638,7 +645,7 @@
                             <ul  class="d-flex flex-row align-items-center justify-content-start ">
 
                                 <li><a href="#contactus" style="font-size: 12px;">تماس با کندو</a></li>
-                                <li><a href="cando-certificate.html" style="font-size: 12px;">گواه نوشت</a></li>
+                                <li><a href="cando-testimonial.html" style="font-size: 12px;">گواه نوشت</a></li>
                                 <li><a href="#wbn" style="font-size: 12px;">مشاوره مهاجرت</a></li>
                                 <li><a href="hhtp://cdsapply.ir/admin" style="font-size: 12px;">ورود</a></li>
                                 <li><a href="index_english.html" style="font-size: 12px;" class="btn btn-outline-light" href="index.html">EN</a></li>
